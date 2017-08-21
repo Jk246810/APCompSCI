@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ run()
+comment1.params=
+comment1.target=void\ launchKarelEnvironment()
+comment1.text=IGNORE\ THE\ CODE\ BELOW.\ \ (Don't\ delete\ it,\ but\ we\n\ had\ to\ include\ it\ to\ get\ Karel\ to\ play\ nicely\ with\n\ BlueJ.\ \ You\ don't\ need\ to\ understand\ what\ it\ means\nat\ all.
+comment2.params=
+comment2.target=java.lang.String\ className()
+numComments=3
