@@ -6,7 +6,39 @@ public class MailToChair extends Karel
 
     public void run()
     {
-
+        move(); 
+        turnLeft(); 
+        move(); 
+        threeLeft();
+        move();
+        pickBeeper();
+        twoleft();
+        bigMove();
+        putBeeper();
+        twoleft();
+        move();
+        threeLeft();
+        move();
+        turnLeft();
+    }
+    
+    public void bigMove()
+    {
+        move();
+        move();
+        move(); 
+    }
+    public void threeLeft() 
+    {
+        turnLeft();
+        turnLeft();
+        turnLeft();
+    }
+    
+    public void twoleft()
+    {
+        turnLeft();
+        turnLeft();
     }
 
     /* IGNORE THE CODE BELOW.  (Don't delete it, but we

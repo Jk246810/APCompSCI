@@ -6,9 +6,47 @@ public class SteepleChase extends Karel
 
     public void run()
     {
-       
+       for (int i=0; i<8; i++)
+       {
+           jumpHurdle();
+       }
     }
-
+    
+    public void jumpHurdle()
+    {
+        ascendHurdle();
+        move();
+        descendHurdle();
+        
+    }
+    
+    public void ascendHurdle()
+    {
+        turnLeft();
+        while(rightIsBlocked())
+        {
+            move();
+        }
+        turnRight();
+    }
+    
+    public void turnRight()
+    {
+        turnLeft();
+        turnLeft();
+        turnLeft();
+    }
+    
+    public void descendHurdle()
+    {
+        turnRight();
+        while(frontIsClear())
+        {
+            move();
+        }
+        turnLeft();
+        
+    }
     /* IGNORE THE CODE BELOW.  (Don't delete it, but we
      * had to include it to get Karel to play nicely with
      * BlueJ.  You don't need to understand what it means
