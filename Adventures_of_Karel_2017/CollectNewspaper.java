@@ -7,6 +7,36 @@ public class CollectNewspaper extends Karel
     public void run()
     {
         move();
+        move();
+        turnRight();
+        move();
+        turnLeft();
+        move();
+        pickBeeper();
+        turnAround();
+        bigMove();
+        turnRight();
+        move();
+        turnRight();
+    }
+    
+    public void bigMove()
+    {
+        move();
+        move();
+        move();
+    }
+    public void turnRight()
+    {
+        turnLeft();
+        turnLeft();
+        turnLeft();
+    }
+    
+    public void turnAround()
+    {
+        turnLeft();
+        turnLeft();
     }
 
     /* IGNORE THE CODE BELOW.  (Don't delete it, but we
