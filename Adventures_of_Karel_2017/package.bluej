@@ -1,8 +1,8 @@
 #BlueJ package file
 package.editor.height=543
 package.editor.width=568
-package.editor.x=744
-package.editor.y=37
+package.editor.x=451
+package.editor.y=40
 package.numDependencies=0
 package.numTargets=15
 package.showExtends=true
@@ -97,8 +97,8 @@ target15.x=10
 target15.y=430
 target2.editor.height=700
 target2.editor.width=900
-target2.editor.x=121
-target2.editor.y=64
+target2.editor.x=632
+target2.editor.y=23
 target2.height=50
 target2.name=HurricaneDamage
 target2.naviview.expanded=false

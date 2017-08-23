@@ -6,7 +6,84 @@ public class HurricaneDamage extends Karel
 
     public void run()
     {
+        findRubble();
+        
 
+    }
+    
+    public void findRubble()
+    {
+      
+            while (noBeepersPresent())
+            {
+                move();
+            }
+       
+            pickBeeper();
+            buildHouse();
+     
+    }
+    
+    public void buildHouse()
+    {
+       
+        turnAround();
+        //
+        move();
+        turnRight();
+        buildPillar();
+        //
+        turnRight();
+        move();
+        turnLeft();
+        //
+        move();
+        turnAround();
+        move();
+        buildPillar();
+        //
+        turnLeft();
+        move();
+        turnLeft();
+        //move();
+        buildPillar();
+        turnAround();
+        move();
+        move();
+        move();
+        turnLeft();
+        if (frontIsClear())
+        {
+            move();
+           
+            findRubble();
+        }
+ 
+    }
+    
+    public void buildPillar()
+    {
+        for (int i=0; i<3; i++)
+        {
+            putBeeper();
+            move();
+        }
+    }
+    
+    public void turnRight()
+    {
+        for (int i=0; i<3; i++)
+        {
+            turnLeft();
+        }
+    }
+    
+    public void turnAround()
+    {
+        for (int i=0; i<2; i++)
+        {
+            turnLeft();
+        }
     }
 
     /* IGNORE THE CODE BELOW.  (Don't delete it, but we
