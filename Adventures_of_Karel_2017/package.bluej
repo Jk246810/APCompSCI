@@ -1,8 +1,8 @@
 #BlueJ package file
 package.editor.height=543
 package.editor.width=568
-package.editor.x=442
-package.editor.y=57
+package.editor.x=475
+package.editor.y=29
 package.numDependencies=0
 package.numTargets=15
 package.showExtends=true
@@ -133,8 +133,8 @@ target4.x=10
 target4.y=130
 target5.editor.height=700
 target5.editor.width=900
-target5.editor.x=244
-target5.editor.y=64
+target5.editor.x=460
+target5.editor.y=91
 target5.height=50
 target5.name=DoubleBeepers
 target5.naviview.expanded=false
