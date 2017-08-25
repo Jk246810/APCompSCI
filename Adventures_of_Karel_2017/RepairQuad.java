@@ -6,9 +6,63 @@ public class RepairQuad extends Karel
 
     public void run()
     {
-
+        while(frontIsClear())
+        {
+            repairColumn();
+            moveToNextColumn();
+            
+        }
+        repairColumn();
     }
 
+    public void moveToNextColumn()
+    {
+        for (int i=0; i<4; i++)
+        {
+            move();
+        }
+    }
+    
+    public void repairColumn()
+    {
+        ascendColumnReplacingMissingBeepers();
+        turnAround();
+        descendColumn();
+    }
+    
+    public void turnAround()
+    {
+        turnLeft();
+        turnLeft();
+    }
+    
+    public void ascendColumnReplacingMissingBeepers()
+    {
+        turnLeft();
+        repaceBeeperIfMissing();
+        while(frontIsClear())
+        {
+            move();
+            repaceBeeperIfMissing();
+        }
+    }
+    
+    public void repaceBeeperIfMissing()
+    {
+        if(noBeepersPresent())
+        {
+            putBeeper();
+        }
+    }
+    
+    public void descendColumn()
+    {
+        while(frontIsClear())
+        {
+            move();
+        }
+        turnLeft();
+    }
     /* IGNORE THE CODE BELOW.  (Don't delete it, but we
      * had to include it to get Karel to play nicely with
      * BlueJ.  You don't need to understand what it means

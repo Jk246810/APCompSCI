@@ -21,14 +21,13 @@ public class SpringTime extends Karel
         ascendStem();
         constructFlower();
         descendStem();
-    }
+    } 
     
     public void moveToStem()
     {
        while (frontIsClear()) 
        {
            move();
-           
        }
        
     }
