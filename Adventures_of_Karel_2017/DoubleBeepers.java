@@ -3,10 +3,63 @@ import stanford.karel.*;
 
 public class DoubleBeepers extends Karel
 {
+    
 
     public void run()
     {
+        move();
+        doubleBeepersInPile();
+        moveBackwards();
 
+    }
+    
+    public void moveBackwards()
+    {
+        turnAround();
+        move();
+        turnAround();
+    }
+    
+    public void turnAround()
+    {
+        turnLeft();
+        turnLeft();
+    }
+    
+    public void doubleBeepersInPile()
+    {
+        makePileTwiceAsBigNextDoor();
+        copyNextDoorPileBack();
+    }
+    
+    public void makePileTwiceAsBigNextDoor()
+    {
+        while(beepersPresent())
+        {
+            pickBeeper();
+            putTwoBeepersNextDoor();
+        }
+    }
+    
+    public void putTwoBeepersNextDoor()
+    {
+        move();
+        putBeeper();
+        putBeeper();
+        moveBackwards();
+    }
+    
+    public void copyNextDoorPileBack()
+    {
+        move();
+        while(beepersPresent())
+        {
+            pickBeeper();
+            moveBackwards();
+            putBeeper();
+            move();
+        }
+        moveBackwards();
     }
 
     /* IGNORE THE CODE BELOW.  (Don't delete it, but we
