@@ -7,34 +7,57 @@ public class MidpointFinder extends Karel
 
     public void run()
     {
-        int length = 0;
-        
+       findMidpoint();
+    }
+    
+    public void findMidpoint()
+    {
+        setUpRowOfBlocks();
+        pickBeeper();
+        turnAround();
+        move();
+        checkIfNoBeepersPresent();
+    }
+    public void setUpRowOfBlocks()
+    {
         while(frontIsClear())
         {
             move();
-            length++;
+            putBeeper();
         }
-        
-      
-      length = (length)/2; 
-      
-      turnAround();
-      for (int i = 0; 1<length; i++)
-      {
-          while(frontIsClear())
-          {
-              move();
-              putBeeper();
-           }
-      }
+     
+    
+    }
+    
+    public void checkIfNoBeepersPresent()
+    {
+        while(beepersPresent())
+        {
+            move();
+        }
+        collectBlocks();
+    }
+    
+    public void collectBlocks()
+    {
+        turnAround();
+        move();
+        while(beepersPresent())
+        {
+           pickBeeper();
+           move();
+           checkIfNoBeepersPresent();
+        }
     }
     
     public void turnAround()
     {
-        turnLeft();
-        turnLeft();
+        for(int i=0; i<2; i++)
+        {
+            turnLeft();
+            
+        }
     }
-   
 
     /* IGNORE THE CODE BELOW.  (Don't delete it, but we
      * had to include it to get Karel to play nicely with
