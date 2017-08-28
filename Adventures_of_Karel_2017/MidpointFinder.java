@@ -1,6 +1,7 @@
 
 import stanford.karel.*;
 
+//Jamee Krzanich, Period C
 public class MidpointFinder extends Karel
 {
     
