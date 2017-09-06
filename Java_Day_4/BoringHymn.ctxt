@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ run()
+comment1.params=
+comment1.target=void\ title()
+comment2.params=thing
+comment2.target=void\ verse(java.lang.String)
+comment3.params=
+comment3.target=void\ chorus()
+numComments=4
