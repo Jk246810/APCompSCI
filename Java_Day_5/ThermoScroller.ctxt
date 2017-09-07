@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ run()
+comment1.params=
+comment1.target=void\ updateLabelPosition()
+comment2.params=
+comment2.target=void\ initializeVariables()
+comment3.params=event
+comment3.target=void\ mouseMoved(java.awt.event.MouseEvent)
+numComments=4
