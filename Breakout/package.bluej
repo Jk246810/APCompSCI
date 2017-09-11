@@ -1,0 +1,24 @@
+#BlueJ package file
+package.editor.height=135
+package.editor.width=235
+package.editor.x=101
+package.editor.y=78
+package.numDependencies=0
+package.numTargets=1
+package.showExtends=true
+package.showUses=true
+target1.appletHeight=500
+target1.appletWidth=500
+target1.editor.height=655
+target1.editor.width=985
+target1.editor.x=381
+target1.editor.y=25
+target1.height=50
+target1.name=Breakout
+target1.naviview.expanded=false
+target1.numberAppletParameters=0
+target1.showInterface=false
+target1.type=AppletTarget
+target1.width=80
+target1.x=90
+target1.y=30
