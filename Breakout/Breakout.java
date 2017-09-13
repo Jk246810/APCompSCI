@@ -65,8 +65,9 @@ public class Breakout extends GraphicsProgram
         addMouseListeners();
         while(true)
         {
-            pause(10);
+            
             updateBall();
+            pause(10);
             checkForCollision(); 
         }
         
@@ -134,7 +135,7 @@ public class Breakout extends GraphicsProgram
            
 
         }
-        dy = 3;
+        dy = 2;
         
         movingBall.setFilled(true);
         add(movingBall);
@@ -147,7 +148,7 @@ public class Breakout extends GraphicsProgram
        
        
         
-          if (movingBall.getX()<0)
+          if (movingBall.getX() < 0+BALL_RADIUS)
           {
             dx = -dy;   
           }         
@@ -167,17 +168,33 @@ public class Breakout extends GraphicsProgram
     
     public void checkForCollision()
     {
-        GObject object = getElementAt(movingBall.getX(), movingBall.getY());
-        
-        if (object == movingPaddle)
+        double x = movingBall.getX();
+        double y = movingBall.getY();
+        GObject object = getElementAt(x, y);
+        if (object == null) 
         {
-            dy = -dy;
-        }else if (object == blocks)
-        {
-            remove(object); 
-        }else{
-            
+           object = getElementAt(x + 2*BALL_RADIUS, y);
+           if (object == null)
+           {
+               object = getElementAt(x, y + 2*BALL_RADIUS);
+               if (object == null)
+               {
+                    object = getElementAt(x + 2*BALL_RADIUS, y + 2*BALL_RADIUS);
+                }
+            }
         }
+       if (object == movingPaddle)
+        {
+          dy = -dy;
+       }else if (object == null)
+       {
+           
+       }
+       else{
+           remove(object);
+           
+            
+       }
         
     }
     
