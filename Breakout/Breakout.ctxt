@@ -2,4 +2,16 @@
 comment0.params=
 comment0.target=void\ run()
 comment0.text=Runs\ the\ Breakout\ program.
-numComments=1
+comment1.params=
+comment1.target=void\ initBricks()
+comment2.params=
+comment2.target=void\ initPaddle()
+comment3.params=
+comment3.target=void\ initBall()
+comment4.params=
+comment4.target=void\ updateBall()
+comment5.params=
+comment5.target=void\ checkForCollision()
+comment6.params=event
+comment6.target=void\ mouseMoved(java.awt.event.MouseEvent)
+numComments=7
