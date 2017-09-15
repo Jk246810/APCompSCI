@@ -1,8 +1,8 @@
 #BlueJ package file
 package.editor.height=161
 package.editor.width=235
-package.editor.x=694
-package.editor.y=273
+package.editor.x=64
+package.editor.y=314
 package.numDependencies=0
 package.numTargets=1
 package.showExtends=true
@@ -10,9 +10,9 @@ package.showUses=true
 target1.appletHeight=500
 target1.appletWidth=500
 target1.editor.height=700
-target1.editor.width=855
-target1.editor.x=756
-target1.editor.y=56
+target1.editor.width=806
+target1.editor.x=598
+target1.editor.y=30
 target1.height=50
 target1.name=Breakout
 target1.naviview.expanded=false

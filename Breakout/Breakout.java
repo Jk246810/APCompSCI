@@ -55,6 +55,10 @@ public class Breakout extends GraphicsProgram
      GOval movingBall;
      double dx;
      double dy;
+     boolean endGame = false; 
+     int numberOfBricks;
+     int numberOfLives = 3;
+     
     
 /** Runs the Breakout program. */
     public void run() 
@@ -63,13 +67,14 @@ public class Breakout extends GraphicsProgram
         initPaddle();
         initBall();
         addMouseListeners();
-        while(true)
+        while(endGame == false)
         {
             
             updateBall();
-            pause(10);
             checkForCollision(); 
+            pause(10);
         }
+        
         
 
     }
@@ -87,6 +92,9 @@ public class Breakout extends GraphicsProgram
                                         BRICK_Y_OFFSET + r*(BRICK_HEIGHT + BRICK_SEP),
                                         BRICK_WIDTH,
                                         BRICK_HEIGHT);
+                                        
+                
+                
                 
                 if(r<2)
                 {
@@ -110,6 +118,7 @@ public class Breakout extends GraphicsProgram
             }
            
         }
+        numberOfBricks = NBRICK_ROWS * NBRICK_ROWS;
     }
     
     public void initPaddle()
@@ -148,11 +157,11 @@ public class Breakout extends GraphicsProgram
        
        
         
-          if (movingBall.getX() < 0+BALL_RADIUS)
+          if (movingBall.getX() < 0)
           {
-            dx = -dy;   
+            dx = -dx;   
           }         
-          if (movingBall.getX()>WIDTH)
+          if (movingBall.getX()>WIDTH - 2*BALL_RADIUS)
           {
             dx = -dx;   
           }
@@ -162,7 +171,12 @@ public class Breakout extends GraphicsProgram
           }         
           if (movingBall.getY()>HEIGHT)
           {
-            dy = -dy;   
+            dy = -dy;
+            endGame = true;
+            numberOfLives -= 1;
+            initializeLoseLabel();
+            GameOver();
+            
           }
     }
     
@@ -185,38 +199,90 @@ public class Breakout extends GraphicsProgram
         }
        if (object == movingPaddle)
         {
-          dy = -dy;
+            if (dy > 0)
+            {
+                dy = -dy;
+            }
        }else if (object == null)
        {
            
        }
        else{
+           dy = -dy;
            remove(object);
-           
-            
+           numberOfBricks -= 1 ;
+           if (numberOfBricks == 0)
+           {
+               endGame = true;
+               initializeWinLabel();
+               GameOver();
+            }
+          
        }
         
     }
     
     public void mouseMoved(MouseEvent event)
     {
-        int x = event.getX();
-        if (x < 0 + PADDLE_WIDTH/2)
+        int mouseX;
+        int mouseY;
+        mouseX = event.getX();
+        mouseY = event.getY();
+        if (mouseX < 0 + PADDLE_WIDTH/2)
         {
             movingPaddle.setLocation(0 ,HEIGHT - PADDLE_Y_OFFSET);
             
-        }else if (x > WIDTH - PADDLE_WIDTH/2)
+        }else if (mouseX > WIDTH - PADDLE_WIDTH/2)
         {
             movingPaddle.setLocation(WIDTH - PADDLE_WIDTH ,HEIGHT - PADDLE_Y_OFFSET);
         }
         else{
             
-            movingPaddle.setLocation(x - PADDLE_WIDTH/2,HEIGHT - PADDLE_Y_OFFSET); 
+            movingPaddle.setLocation(mouseX - PADDLE_WIDTH/2,HEIGHT - PADDLE_Y_OFFSET); 
         }
     }
     
+    public void initializeLoseLabel()
+    {
+        
+       
+       GLabel winner = new GLabel("lives " + numberOfLives, 
+                                WIDTH/2, HEIGHT/2);
+                                
+       GLabel playAgain = new GLabel("Play again ", 
+                                0, 0);
+       add(winner);
+       add(playAgain);
+    }
+    
+    public void initializeWinLabel()
+    {
+        
+       
+       GLabel winner = new GLabel("yay", 
+                                WIDTH/2, HEIGHT/2);
+                                
+       GLabel playAgain = new GLabel("try again ", 
+                                0, 0);
+       add(winner);
+       add(playAgain);
+    }
+    
+    public void GameOver()
+    {
+        
+        
+        if (endGame == true)
+        {
+           
+            waitForClick();
+            removeAll();
+            endGame = false;
+            run();
+            
+            
+        }
+    }
    
-    
-    
    
 }
