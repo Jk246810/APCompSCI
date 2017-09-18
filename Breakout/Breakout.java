@@ -88,6 +88,7 @@ public class Breakout extends GraphicsProgram
         {
             for (int c=0; c<NBRICK_ROWS; c++)
             {
+               
                 blocks = new GRect(0 + c*(BRICK_WIDTH + BRICK_SEP), 
                                         BRICK_Y_OFFSET + r*(BRICK_HEIGHT + BRICK_SEP),
                                         BRICK_WIDTH,
@@ -108,13 +109,14 @@ public class Breakout extends GraphicsProgram
                 }else if(r<8)
                 {
                     blocks.setColor(Color.GREEN);
-                }else 
+                }else if(r<10)
                 {
                     blocks.setColor(Color.CYAN);
                 }
                 
                 blocks.setFilled(true);
                 add(blocks);
+                
             }
            
         }
@@ -245,24 +247,37 @@ public class Breakout extends GraphicsProgram
     public void initializeLoseLabel()
     {
         
-       
-       GLabel winner = new GLabel("lives " + numberOfLives, 
-                                WIDTH/2, HEIGHT/2);
-                                
-       GLabel playAgain = new GLabel("Play again ", 
-                                0, 0);
-       add(winner);
-       add(playAgain);
+       if(numberOfLives > 0)
+       {
+           GLabel loser = new GLabel("lives " + numberOfLives, 
+                                    WIDTH/2, HEIGHT/2);
+                                    
+           GLabel tryAgain = new GLabel("Try Again ", 
+                                    0, 0);
+           add(loser);
+           add(tryAgain);
+        }else
+        {
+            GLabel bigLoser = new GLabel("Game Over", 
+                                    WIDTH/2, HEIGHT/2);
+            GLabel newGame = new GLabel("Start New Game ", 
+                                    WIDTH/2, HEIGHT/2);
+            
+            numberOfLives = 3;
+           add(bigLoser);
+           add(newGame);
+                                    
+        }
     }
     
     public void initializeWinLabel()
     {
         
        
-       GLabel winner = new GLabel("yay", 
+       GLabel winner = new GLabel("Winner!", 
                                 WIDTH/2, HEIGHT/2);
                                 
-       GLabel playAgain = new GLabel("try again ", 
+       GLabel playAgain = new GLabel("Play Again ", 
                                 0, 0);
        add(winner);
        add(playAgain);
