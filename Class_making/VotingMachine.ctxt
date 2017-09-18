@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=
+comment0.target=VotingMachine()
+comment1.params=
+comment1.target=void\ voteYes()
+comment2.params=
+comment2.target=void\ voteNo()
+comment3.params=rigFactor
+comment3.target=void\ rigElection(double)
+comment4.params=
+comment4.target=double\ getYesPercent()
+comment5.params=
+comment5.target=double\ getNoPercent()
+comment6.params=
+comment6.target=java.lang.String\ getWinner()
+numComments=7
