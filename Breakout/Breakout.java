@@ -6,6 +6,7 @@ import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
 
+//Jamee Krzanich 
 public class Breakout extends GraphicsProgram 
 {
 
@@ -50,7 +51,9 @@ public class Breakout extends GraphicsProgram
     private static final int NTURNS = 3;
 
  /** Global variables declared here.  You should feel free to add others as needed. */
-     GRect paddle;
+     GRect movingPaddle;
+     GRect blocks;
+     GRect deadlyBlock;
      GOval ball;
      GOval movingBall;
      double dx;
@@ -72,15 +75,15 @@ public class Breakout extends GraphicsProgram
             
             updateBall();
             checkForCollision(); 
-            pause(10);
+            pause(5);
         }
         
         
 
     }
     
-    GRect blocks;
-    GRect movingPaddle;
+    
+    
     
     public void initBricks()
     {
@@ -125,23 +128,24 @@ public class Breakout extends GraphicsProgram
            
         }
         numberOfBricks = NBRICK_ROWS * NBRICK_ROWS;
-        int x = (int)(Math.random() * 10);
-        int y = (int)(Math.random() * 10); 
-                if (x <= 10 || y <= 10)
-                {
-                    
-                    GRect deadlyBlock = new GRect(0 + x*(BRICK_WIDTH + BRICK_SEP), 
-                                        BRICK_Y_OFFSET + y*(BRICK_HEIGHT + BRICK_SEP),
-                                        BRICK_WIDTH,
-                                        BRICK_HEIGHT);
-                    GObject object = getElementAt(x*(BRICK_HEIGHT + BRICK_SEP),0 + y*(BRICK_WIDTH + BRICK_SEP));
-                    remove(object);
-                    deadlyBlock.setFilled(true);
-                    add(deadlyBlock);
-                    
-                    System.out.print("hola " + x + y);
-                
-            }
+         
+        
+            int x = (int)(Math.random() * 10);
+            int y = (int)(Math.random() * 10); 
+
+             GObject object =  getElementAt(x*(BRICK_WIDTH + BRICK_SEP)+1,BRICK_Y_OFFSET +1 + y*(BRICK_HEIGHT + BRICK_SEP));
+            remove(object);
+            
+            deadlyBlock = new GRect(0 + x*(BRICK_WIDTH + BRICK_SEP), 
+                BRICK_Y_OFFSET + y*(BRICK_HEIGHT + BRICK_SEP),
+                BRICK_WIDTH,
+                BRICK_HEIGHT);
+           
+            deadlyBlock.setFilled(true);
+            add(deadlyBlock);
+            
+            numberOfBricks -= 1;        
+            
     }
     
     public void initPaddle()
@@ -197,8 +201,29 @@ public class Breakout extends GraphicsProgram
             dy = -dy;
             endGame = true;
             numberOfLives -= 1;
-            initializeLoseLabel();
-            GameOver();
+            if (numberOfLives > 0)
+            {
+                 GLabel loser = new GLabel(numberOfLives + " lives", 
+                                    WIDTH/2 - 50 , HEIGHT/2);
+                                    
+                     GLabel tryAgain = new GLabel("Try Again ", 
+                                    WIDTH/2 - 40, HEIGHT/1.8);
+                                   tryAgain.setFont("times-plain-20");
+                             loser.setFont("times-plain-36");
+                              add(loser);
+                              add(tryAgain);
+                waitForClick();
+                remove(loser);
+                remove(tryAgain);
+                remove(movingBall);
+                initBall();
+                endGame = false;
+                
+            }else{
+                
+                initializeBigLoseLabel();
+                GameOver();
+            }   
             
           }
     }
@@ -229,7 +254,13 @@ public class Breakout extends GraphicsProgram
        }else if (object == null)
        {
            
-       }
+       }else if(object == deadlyBlock)
+        {
+            movingPaddle.setSize(PADDLE_WIDTH/2, PADDLE_HEIGHT);
+            remove(object);
+            
+            
+        }
        else{
            dy = -dy;
            remove(object);
@@ -265,22 +296,10 @@ public class Breakout extends GraphicsProgram
         }
     }
     
-    public void initializeLoseLabel()
+    public void initializeBigLoseLabel()
     {
         
-       if(numberOfLives > 0)
-       {
-           GLabel loser = new GLabel(numberOfLives + " lives", 
-                                    WIDTH/2 - 50 , HEIGHT/2);
-                                    
-           GLabel tryAgain = new GLabel("Try Again ", 
-                                    WIDTH/2 - 40, HEIGHT/1.8);
-           tryAgain.setFont("times-plain-20");
-           loser.setFont("times-plain-36");
-           add(loser);
-           add(tryAgain);
-        }else
-        {
+       
             GLabel bigLoser = new GLabel("Game Over", 
                                     WIDTH/2 - 50, HEIGHT/2);
             bigLoser.setFont("times-plain-36");
@@ -294,7 +313,7 @@ public class Breakout extends GraphicsProgram
            add(bigLoser);
            add(newGame);
                                     
-        }
+        
     }
     
     public void initializeWinLabel()
