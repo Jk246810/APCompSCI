@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=startingName\ startingSalary
+comment0.target=Employee(java.lang.String,\ double)
+comment1.params=amount
+comment1.target=void\ raiseSalary(int)
+comment2.params=
+comment2.target=java.lang.String\ getName()
+comment3.params=
+comment3.target=double\ getSalary()
+numComments=4
