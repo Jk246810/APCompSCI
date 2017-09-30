@@ -7,7 +7,4 @@ This repository contains the entirety of things completed and learned in the fir
           -Class Making
       -Unit 1
         -math 
-<<<<<<< HEAD
         -Strings
-=======
->>>>>>> ceedf2876ed15a3907dea85b75bfe990bdde4a90
