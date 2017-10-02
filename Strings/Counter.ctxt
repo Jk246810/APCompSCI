@@ -1,4 +1,6 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ run()
-numComments=1
+comment1.params=phrase\ letter
+comment1.target=int\ count(java.lang.String,\ java.lang.String)
+numComments=2

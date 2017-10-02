@@ -1,4 +1,8 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ run()
-numComments=1
+comment1.params=what
+comment1.target=boolean\ isPalindrome(java.lang.String)
+comment2.params=phrase\ letter\ symbol
+comment2.target=java.lang.String\ replaceAll(java.lang.String,\ java.lang.String,\ java.lang.String)
+numComments=3
