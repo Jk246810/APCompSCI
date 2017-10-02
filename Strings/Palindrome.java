@@ -28,7 +28,7 @@ public class Palindrome extends ConsoleProgram
             String y = what.substring(what.length()-i-1, what.length()-i);
             //length return 7 if the word is racecar, but racecar only has 6 (because of 0)
             
-            if (x.equals(y))
+            if (x.equalsIgnoreCase(y))
             {
                 
             }else 
