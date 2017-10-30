@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ run()
+comment1.params=students
+comment1.target=void\ initializeStudents(java.lang.String[])
+numComments=2

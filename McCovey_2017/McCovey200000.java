@@ -16,8 +16,8 @@ public class McCovey200000 extends GraphicsProgram
     {
         
         // all you should need to do is change the next two lines
-        p1 = new Winner2015();
-        p2 = new GetTo9Player();
+        p2 = new JameePlayer();
+        p1 = new RandomPlayer();
         
         bar1 = new GRect(0,100,0,100);
         bar1.setColor(Color.RED);
