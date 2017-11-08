@@ -10,7 +10,19 @@ public class RackoGame
 
     public RackoGame()
     {
-        // version 0.1
+        
+       for(int i=0; i<59; i++)
+       {
+           deck.add(i+1);
+        }
+        for(int i =0; i<deck.size(); i++)
+        {
+            int number= (int)(Math.random()*59) + 1;
+            deck.set(number, i);
+            deck.set(i, number); 
+            
+        }
+       // player.add
     }
     
     public void makeMove(int newCardValue, int handIndex, int[] hand)
