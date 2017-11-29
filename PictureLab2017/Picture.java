@@ -162,6 +162,42 @@ public class Picture extends SimplePicture
             
         }
     }
+    
+    public void flipHorizontal()
+    {
+        Pixel[][] pixels = getPixels2D();
+        
+        for (int r = 0; r<pixels.length; r++)
+        {
+            for(int c=0; c<pixels[r].length/2; c++)
+            {
+               Color color = pixels[r][c].getColor();
+               pixels[r][pixels[r].length-1-c].setColor(color); 
+               
+            } 
+        }
+        
+    }
+    public void edgeDetection(int threshold) 
+    {
+        Pixel[][] pixels = getPixels2D();
+        for (int r = 1; r<pixels.length-1; r++)
+        {
+            for(int c=0; c<pixels[r].length-1; c++)
+            {
+                if(pixels[r][c].colorDistance(pixels[r][c+1].getColor()) > threshold
+                && pixels[r+1][c].colorDistance(pixels[r][c+1].getColor()) > threshold
+                && pixels[r+1][c].colorDistance(pixels[r-1][c].getColor()) > threshold)
+                {
+                    pixels[r][c].setColor(Color.BLACK);
+                }else{
+                    pixels[r][c].setColor(Color.WHITE);
+                }
+              
+               
+            } 
+        }
+    }
 
     /* Main method for testing - each class in Java can have a main 
      * method 

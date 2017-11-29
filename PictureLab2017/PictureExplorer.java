@@ -800,9 +800,11 @@ public class PictureExplorer implements MouseMotionListener, ActionListener, Mou
    */
   public static void main( String args[])
   {
-    Picture pix = new Picture("images/" + "copper.png");
+    Picture pix = new Picture("images/" + "leah.jpg");
     pix.explore();
-    pix.solveCopper();
+    //pix.flipHorizontal(); 
+    pix.edgeDetection(30); 
+   // pix.solveCopper();
     //pix.solveGold();
     //pix.clearBlue();
     //pix.allRed();
