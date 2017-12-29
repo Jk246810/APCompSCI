@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=rows\ cols
+comment0.target=ConnectFourGame(int,\ int)
+comment1.params=
+comment1.target=int\ getWinner()
+comment2.params=r\ c
+comment2.target=boolean\ leftDiagonal(int,\ int)
+comment3.params=r\ c
+comment3.target=boolean\ rightDiagonal(int,\ int)
+comment4.params=r\ c
+comment4.target=boolean\ row(int,\ int)
+comment5.params=r\ c
+comment5.target=boolean\ column(int,\ int)
+comment6.params=col
+comment6.target=int\ dropChecker(int)
+numComments=7

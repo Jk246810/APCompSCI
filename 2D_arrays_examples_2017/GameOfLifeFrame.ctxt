@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=
+comment0.target=GameOfLifeFrame()
+comment0.text=\n\ \ \ \ \ \ Constructs\ the\ frame.\n
+comment1.params=numTurns
+comment1.target=void\ playTheGame(int)
+comment1.text=\n\ \ \ \ \ \ Creates\ the\ control\ panel\ with\ the\ text\ fields\n\ \ \ \ \ \ at\ the\ bottom\ of\ the\ frame.\n
+comment2.params=
+comment2.target=void\ createControlPanel()
+comment3.params=
+comment3.target=void\ startAnimation()
+comment4.params=
+comment4.target=void\ stopAnimation()
+comment5.params=e
+comment5.target=void\ actionPerformed(java.awt.event.ActionEvent)
+numComments=6
