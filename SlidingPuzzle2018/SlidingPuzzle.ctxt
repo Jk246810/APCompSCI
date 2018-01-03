@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=sideLength
+comment0.target=SlidingPuzzle(int)
+comment1.params=
+comment1.target=boolean\ isDone()
+comment2.params=
+comment2.target=void\ initialize()
+comment3.params=row\ col
+comment3.target=void\ slide(int,\ int)
+comment4.params=row\ col
+comment4.target=int\ getValueAt(int,\ int)
+numComments=5
