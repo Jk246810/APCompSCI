@@ -29,14 +29,44 @@ public class SlidingPuzzle
         for (int i = 0; i < side * side; i++)
             temp.add(i);
         // to be completed in part (A)
+        for (int r=0; r< values.length;r++)
+        {
+            for(int c=0; c<values[0].length; c++)
+            {
+                int index = (int)(Math.random()*temp.size()); 
+                values[r][c] = temp.remove(index); 
+                
+            }
+        }
     }
     
     /* returns true if the numbers are in "sliding puzzle"
      order, false otherwise; note that the blank (represented
      by a 0) can be anywhere
     */
+   //jamee krzanich
     public boolean isDone()
     {
+        int counter = 0; 
+        for (int r=0; r< values.length; r++)
+        {
+            for(int c=0; c< values[0].length; c++)
+            {
+                if(values[r][c] != 0 && values[r][c] < counter)
+                {
+                    return false;
+                }
+                if (values[r][c] == 0)
+                {
+                    counter += values[r][c];
+                }
+                else{
+                    counter = values[r][c]; 
+                }
+            }
+        }
+        return true;
+        
         // to be completed in part (b)
     }
     
@@ -51,6 +81,29 @@ public class SlidingPuzzle
      */
     public void slide(int row, int col)
     {
+        if (row>0 && values[row-1][col]==0)
+        {
+            values[row-1][col] = values[row][col]; 
+            values[row][col] = 0; 
+        }
+        
+        else if (row< side-1 && values[row+1][col]==0)
+        {
+            values[row+1][col] = values[row][col]; 
+            values[row][col] = 0; 
+        } 
+        
+        else if (col>0 && values[row][col-1]==0)
+        {
+            values[row][col-1] = values[row][col]; 
+            values[row][col] = 0; 
+        } 
+        
+        else if (col<side-1 && values[row][col+1]==0)
+        {
+            values[row][col+1] = values[row][col]; 
+            values[row][col] = 0; 
+        } 
         // to be completed in part (c)
     }
     

@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=studentList\ rows\ cols
+comment0.target=SeatingChart(java.util.List,\ int,\ int)
+comment0.text=\ Creates\ a\ seating\ chart\ with\ the\ given\ number\ of\ rows\ and\ columns\ from\ the\ students\ in\ studentList.\ Empty\ seats\ in\ the\ seating\ chart\ are\ represented\ by\ null.\n\ @param\ rows\ the\ number\ of\ rows\ of\ seats\ in\ the\ classroom\n\ @param\ cols\ the\ number\ of\ columns\ of\ seats\ in\ the\ classroom\n\ Precondition\:\ rows\ >\ 0;\ cols\ >\ 0;\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ rows\ *\ cols\ >\=\ studentList.size()\n\ Postcondition\:\n\ \ \ -\ Students\ appear\ in\ the\ seating\ chart\ in\ the\ same\ order\ as\ they\ appear\n\ \ \ \ \ in\ studentList,\ starting\ at\ seats[0][0].\n\ \ \ -\ seats\ is\ filled\ column\ by\ column\ from\ studentList,\ followed\ by\ any\ \n\ \ \ \ \ empty\ seats\ (represented\ by\ null).\n\ \ \ -\ studentList\ is\ unchanged.\n
+comment1.params=allowedAbsences
+comment1.target=int\ removeAbsentStudents(int)
+comment1.text=\ Removes\ students\ who\ have\ more\ than\ a\ given\ number\ of\ absences\ from\ the\ seating\ chart,\ replacing\ those\ entries\ in\ the\ seating\ chart\ with\ null\n\ and\ returns\ the\ number\ of\ students\ removed.\n\ @param\ allowedAbsences\ an\ integer\ >\=\ 0\n\ @return\ number\ of\ students\ removed\ from\ seats\n\ Postcondition\:\n\ \ \ -\ All\ students\ with\ allowedAbsences\ or\ fewer\ are\ in\ their\ original\ positions\ in\ seats.\ \n\ \ \ -\ No\ student\ in\ seats\ has\ more\ than\ allowedAbsences\ absences.\n\ \ \ -\ Entries\ without\ students\ contain\ null.\n
+comment2.params=
+comment2.target=java.lang.String\ toString()
+comment2.text=I\ wrote\ this\ for\ you,\ to\ make\ the\ SeatingChartRunner\ \ \ \ \n\ work\ successfully.\ \ \:-)\n
+numComments=3

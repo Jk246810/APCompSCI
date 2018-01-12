@@ -6,7 +6,7 @@ import java.awt.event.*;
 
 public class SlidingPuzzleGraphics extends GraphicsProgram
 {
-    private static final int GAMESIZE = 4;
+    private static final int GAMESIZE = 3;
     private static final int WINDOWSIZE = 360;
     private static final int EXTRAHEIGHT = 24;
 
