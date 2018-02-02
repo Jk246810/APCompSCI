@@ -11,7 +11,7 @@ import java.awt.image.BufferedImage;
  * 
  * @author Barb Ericson ericson@cc.gatech.edu
  */
-public interface DigitalPicture 
+public interface DigitalPicture  
 {
   public String getFileName(); // get the file name that the picture came from
   public String getTitle(); // get the title of the picture

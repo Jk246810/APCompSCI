@@ -70,7 +70,39 @@ public class Picture extends SimplePicture
     }
 
     ////////////////////// methods ///////////////////////////////////////
-
+  public void insert(Picture pic, int row, int col)
+    {
+        Pixel[][] origPixels = getPixels2D(); 
+        Pixel[][] insertPixels = pic.getPixels2D();
+        for (int r=0; r<insertPixels.length; r++)
+        {for (int c=0; c<insertPixels[0].length; c++)
+            {
+                if(r+row<origPixels.length && c+col <origPixels[0].length)
+                {
+                    if(insertPixels[r][c].colorDistance(Color.green) > 50)
+                    {
+                        origPixels[r+row][c+col].setColor(insertPixels[r][c].getColor()); 
+                    }
+                }
+                
+                
+            }
+        }
+    }
+    
+    public void flipHorizontally()
+    {
+        Pixel[][] pixels = getPixels2D();
+        for(int r = 0; r<pixels.length; r++)
+        {
+            for(int c=0; c<pixels[0].length/2; c++)
+            {
+                Color color = pixels[r][c].getColor(); 
+                pixels[r][c].setColor(pixels[r][pixels[0].length-1-c].getColor()); 
+                pixels[r][pixels[0].length-1-c].setColor(color); 
+            }
+        }
+    }
     /**
      * Method to return a string with information about this picture.
      * @return a string with information about the picture such as fileName,

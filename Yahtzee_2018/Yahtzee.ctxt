@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ run()
+comment1.params=
+comment1.target=void\ playGame()
+comment2.params=
+comment2.target=void\ everyPlayerTakesTurn()
+comment3.params=playerNum
+comment3.target=void\ onePlayerTakesTurn(int)
+comment4.params=dice\ category
+comment4.target=int\ getScore(int[],\ int)
+comment5.params=
+comment5.target=int[]\ getAllDice()
+comment6.params=dice
+comment6.target=int[]\ rerollSomeDice(int[])
+comment7.params=
+comment7.target=void\ displayWhoWins()
+comment8.params=args
+comment8.target=void\ main(java.lang.String[])
+comment8.text=Java\ main\ method\ to\ ensure\ that\ this\ program\ starts\ correctly
+numComments=9

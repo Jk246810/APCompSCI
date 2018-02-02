@@ -1,0 +1,24 @@
+#BlueJ package file
+package.editor.height=161
+package.editor.width=337
+package.editor.x=965
+package.editor.y=266
+package.numDependencies=0
+package.numTargets=1
+package.showExtends=true
+package.showUses=true
+target1.appletHeight=500
+target1.appletWidth=500
+target1.editor.height=700
+target1.editor.width=900
+target1.editor.x=30
+target1.editor.y=64
+target1.height=50
+target1.name=NumberGrid
+target1.naviview.expanded=true
+target1.numberAppletParameters=0
+target1.showInterface=false
+target1.type=AppletTarget
+target1.width=100
+target1.x=70
+target1.y=10

@@ -147,7 +147,7 @@ public class PictureFrame
     frame.setVisible(true);
     
     // update the image from the picture
-    updateImage();
+    updateImage(); 
     
     // tell the JFrame to handle the repaint
     frame.repaint();

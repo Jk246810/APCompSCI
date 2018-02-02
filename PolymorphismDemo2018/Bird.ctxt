@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=initialSpecies
+comment0.target=Bird(java.lang.String)
+comment1.params=
+comment1.target=void\ fly()
+numComments=2
