@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=givenName
+comment0.target=CollegeCounselor(java.lang.String)
+comment1.params=hours
+comment1.target=void\ doWork(double)
+comment2.params=student
+comment2.target=java.lang.String\ giveAdvice(Student)
+numComments=3

@@ -3,6 +3,9 @@ import acm.io.*;
 import acm.program.*;
 import acm.util.*;
 
+//Jamee Krzanich 
+//Period C
+
 public class Yahtzee extends GraphicsProgram implements YahtzeeConstants 
 {
  
@@ -34,7 +37,8 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants
         {
             everyPlayerTakesTurn();
         }
-        displayWhoWins();
+        int winner = getWinner(); 
+        display.printMessage(playerNames[winner] + " wins!!");
         // here's where you'll need to begin
     }
     
@@ -52,7 +56,7 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants
         display.waitForPlayerToClickRoll(playerNum+1);
         int[] dice = getAllDice(); 
         display.displayDice(dice);
-        
+        //changed to test 
         for(int i=0; i< 2; i++)
         {
             display.printMessage("Select the dice you wish to re-roll and click \"roll again\".");
@@ -103,28 +107,25 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants
     
     private int getScore(int[] dice, int category)
     {
-        if(category == CHANCE)
+        if(category == CHANCE)//works 
             return getSumOfDice(dice);
-        else if(category == YAHTZEE)
+        else if(category == YAHTZEE) //works
             return checkForOfaKind(getFrequencies(dice), 50, 5);
-            
-        //have not done yet
-        else if(category == LARGE_STRAIGHT)
+        else if(category == LARGE_STRAIGHT) //works
             return checkConsecutiveValues(getFrequencies(dice), 40, 5);
-        else if(category == SMALL_STRAIGHT)
+        else if(category == SMALL_STRAIGHT) //works
             return checkConsecutiveValues(getFrequencies(dice), 30, 4); 
-        else if(category ==FULL_HOUSE)
-            //have not done yet
-          //  return checkFor3and2(dice); 
-        else if(category == FOUR_OF_A_KIND)
+        else if(category == FULL_HOUSE) //works
+            return checkForFullHouse(getFrequencies(dice));    
+        else if(category == FOUR_OF_A_KIND) //works
             return checkForOfaKind(getFrequencies(dice), getSumOfDice(dice), 4);
-        else if(category == THREE_OF_A_KIND)
+        else if(category == THREE_OF_A_KIND) //works
             return checkForOfaKind(getFrequencies(dice), getSumOfDice(dice), 3);
-        
-        else if(category <= SIXES)
+        else if(category <= SIXES) //works
             return getSumOfSameValue(category, dice);
-       else
-          return -1;
+       
+        return -1;
+        
     } 
     
     private int checkConsecutiveValues(int[] frequency, int points, int howMany)
@@ -158,6 +159,32 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants
             return 0; 
         }
         
+    }
+    
+    private int checkForFullHouse(int[] frequency)
+    {
+        boolean check3 = false; 
+        boolean check2 = false; 
+        for(int i=0; i<frequency.length; i++)
+        {
+            
+            if(frequency[i]==3)
+            {
+                check3 = true; 
+                
+            }else if(frequency[i] ==2) 
+            {
+                check2 = true; 
+            }
+        }
+        
+        if(check3 && check2)
+        {
+            return 25; 
+        }else 
+        {
+            return 0; 
+        } 
     }
     private int getSumOfDice(int[] dice)
     {
@@ -235,10 +262,17 @@ public class Yahtzee extends GraphicsProgram implements YahtzeeConstants
         
     } 
 
-   // you'll probably have lots of methods here.
-   // (I had fifteen!)
-   private void displayWhoWins()
+  
+   private int getWinner()
    {
+      int winner = 0;
+      for (int i=1; i<numPlayers; i++){
+         if(scores[i][TOTAL] > scores[i][TOTAL])
+         {
+             winner = i; 
+          }
+      }
+      return winner; 
     }
    
     

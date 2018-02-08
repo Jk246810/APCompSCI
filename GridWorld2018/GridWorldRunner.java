@@ -10,7 +10,9 @@ public class GridWorldRunner
         ActorWorld world = new ActorWorld();
         world.add(new Bug());
         world.add(new Rock());
-        world.add(new Critter());
+        world.add(new BoxBug(4));
+        world.add(new Crab());
+         world.add(new Chameleon());
         world.show();
     }
 }

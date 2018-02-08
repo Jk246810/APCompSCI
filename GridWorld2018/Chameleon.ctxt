@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Chameleon()
+comment1.params=actors
+comment1.target=void\ processActors(java.util.ArrayList)
+comment2.params=loc
+comment2.target=void\ makeMove(info.gridworld.grid.Location)
+numComments=3
