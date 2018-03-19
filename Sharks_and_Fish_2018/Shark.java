@@ -8,7 +8,7 @@ import info.gridworld.grid.*;
 public class Shark extends Critter
 {
     // constants
-    private static final int MUSTEAT = 8;
+    private static final int MUSTEAT = 16;
 
     // private instance variables
     private int turnsSinceEaten;

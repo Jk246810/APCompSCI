@@ -30,7 +30,8 @@ public class Fish extends Critter
         age++;
         if (age >= OLDAGE)
         {
-            if (Math.random() <.2)
+              
+            if (Math.random() <PROBOFDYING)
             removeSelfFromGrid();
             
         }

@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.params=width\ height
+comment0.target=GVectorPolygon(int,\ int)
+comment1.params=numPixels
+comment1.target=void\ increaseVelocity(double)
+comment1.text=\ this\ means\ that\ this\ is\ now\ a\ java\ doc\ comment\n\ @param\ numPixels\ how\ much\ you\ want\ to\ increase\ the\ velocity\ by;\ units\ are\ pixels\ per\ turn\n
+comment2.params=
+comment2.target=void\ updatePosition()
+comment2.text=\n\ this\ updates\ the\ position\ of\ the\ gvector\ polygon.\ you\ probably\ want\ to\ do\ this\n\ repeatedly\ inside\ some\ loop\ \n
+comment3.params=angle
+comment3.target=void\ rotate(double)
+comment4.params=
+comment4.target=double\ getTheta()
+comment4.text=\n\ gets\ the\ angle\ for\ the\ vector\ of\ this\ polygon\ \n\ @return\ the\ angle\ in\ degrees\n
+comment5.params=
+comment5.target=double\ getVelocityX()
+comment6.params=
+comment6.target=double\ getVelocityY()
+comment7.params=
+comment7.target=acm.graphics.GRectangle\ getBoundingRectangle()
+numComments=8

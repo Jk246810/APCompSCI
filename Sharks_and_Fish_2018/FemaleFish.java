@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import info.gridworld.actor.Actor;
 import info.gridworld.grid.Location;
 
+//Jamee and Teddy, Period C
+
 public class FemaleFish extends Fish
 {
     // constants
@@ -15,13 +17,15 @@ public class FemaleFish extends Fish
 
     public FemaleFish()
     {
-        super();  // needed to call Fish constructor, which initializes age
+        super();  
         setColor(Color.PINK);
+        turnsPregnant = 0; 
 
     }
 
     public void act()
     {
+        super.act();
         if (turnsPregnant >0)
         {
             setColor(Color.RED);
@@ -30,10 +34,10 @@ public class FemaleFish extends Fish
         else
             setColor(Color.PINK);
 
-        if (turnsPregnant = GESTATIONPERIOD)
+        if (turnsPregnant == GESTATIONPERIOD)
             giveBirth();
 
-        // finish this up
+       
     }
 
     public void giveBirth()
@@ -41,19 +45,30 @@ public class FemaleFish extends Fish
         ArrayList<Fish> fishies = new ArrayList<Fish>();
         for (int i=0; i<numBabies; i++)
         {
-            int random = (Math.random());
+            double random = (Math.random());
             
             if (random<.5)
-              MaleFish boy = new MaleFish();
-           // fishies.add(
-            
-            
+             fishies.add(new MaleFish());
+            else 
+              fishies.add(new FemaleFish()); 
             
         }
         
-        
-        
-        
+       ArrayList<Location> locations = getMoveLocations(); 
+       
+       while(fishies.size()>0 && locations.size()>0)
+       {
+           int index = (int)(Math.random()*locations.size());
+           fishies.get(0).putSelfInGrid(getGrid(), locations.get(index)); 
+           locations.remove(index);
+           fishies.remove(0);
+           numBabies--;
+        }
+       if(fishies.size()==0)
+       {
+           turnsPregnant = 0; 
+        }
+  
     }
 
     public void processActors(ArrayList<Actor> actors)
