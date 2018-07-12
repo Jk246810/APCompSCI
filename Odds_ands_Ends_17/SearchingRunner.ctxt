@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ run()
+comment1.params=len
+comment1.target=int[]\ getRandomArray(int)
+comment2.params=nums\ value
+comment2.target=boolean\ linearSearch(int[],\ int)
+comment3.params=nums\ value
+comment3.target=boolean\ binarySearch(int[],\ int)
+comment4.params=nums\ value
+comment4.target=boolean\ recursiveBinarySearch(int[],\ int)
+comment5.params=nums\ value\ low\ high
+comment5.target=boolean\ recursiveBinarySearch(int[],\ int,\ int,\ int)
+numComments=6

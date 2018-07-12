@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.params=numerator\ denominator
+comment0.target=Fraction(int,\ int)
+comment1.params=
+comment1.target=void\ reduce()
+comment1.text=\ \ This\ method\ automatically\ reduces\ the\ fraction,\ using\n\ \ \ a\ "greatest\ common\ factor"\ method\ discovered\ by\ Euclid.\n\ \ \ (How\ cool\ and\ historic\!)\n
+numComments=2

@@ -42,8 +42,26 @@ public class Fraction
     
     public Fraction multiply(Fraction other)
     {
-        return new Fraction(numerator*other.numerator, numerator*other.numerator); 
+       
+        return new Fraction(this.numerator*other.numerator, this.denominator*other.denominator); 
+        
+    }
+    public Fraction add(Fraction other) 
+    {
+        int n = (this.numerator * other.denominator) + (other.numerator * this.denominator);
+        int d = (this.denominator * other.denominator);
+        Fraction added = new Fraction(n, d); 
+        return added; 
     }
     
+    public Fraction cubed()
+    {
+        return multiply(multiply(this)); 
+    }
+    
+    public String toString()
+    {
+        return numerator + "/" + denominator; 
+    }
     
 }

@@ -1,0 +1,328 @@
+AP Computer Science – Polymorphism Test (March, 2018)
+
+
+public class __________________________  extends ____________________
+	your name here	something you would extend
+
+Question #0
+My family has purchased a lot of clothing for my daughter Leah on websites like 
+www.babycenter.com.  When you purchase clothes for a baby, you can purchase tops, 
+pants, or socks individually, or sometimes you can purchase an "outfit".  For the 
+purposes of this question, an "outfit" consists of a top, pants, and socks.
+Every baby clothing item has a description (like "rainbow shirt" or "pink striped 
+socks", for example) and a suggested age (like "eighteen months" or "two years").  
+This question involves four classes: Top, Pants, Socks, and Outfit.  All four classes 
+implement the BabyClothing interface, shown below.
+
+public interface BabyClothing
+{
+	/** @return a description of the item */
+       String getDescription();
+
+       /** @return a String representing the suggested age of the item,
+          like "eighteen months" or "two years" */ 
+	String getAge();
+}
+
+The following diagram shows the relationship between the BabyClothing interface 
+and the Top, Pants, Socks, and Outfit classes.
+
+
+
+
+
+
+
+
+
+An Outfit consists of a Top, Pants, and Socks.  In this question you will write the 
+complete class declaration for the Outfit class.
+The Outfit constructor should take three parameters, representing the Top, Pants, 
+and Socks included in this outfit, in that order.
+The description of an outfit should be the name of the top, then a space, then the 
+word "outfit".  Examples of this include "rainbow shirt outfit" or "dinosaur 
+blouse outfit."
+Hopefully, the suggested age of each item in the outfit would be identical.  
+Otherwise, for example, the pants might be too big or small.  If the suggested ages 
+of each item in the outfit are identical, then this String should be returned as the 
+age of the outfit.  If, on the other hand, the ages of any of the items in the outfit are 
+different from the age of another item, then the age of the outfit is "mixed ages".  
+That is, if the age of the top, pants, and socks are all "two years", then the age of 
+the outfit is "two years".  If the age of the top and the pants are "two years", but 
+the age of the socks are "eighteen months", then the age of the outfit is "mixed 
+ages".
+Write the complete class declaration for the Outfit class.  You should include all 
+necessary methods and use meaningful identifiers.
+
+
+Question #1
+Consider a collection of classes representing entries in a teacher's gradebook.  There 
+are lots of different types of assignments that can be entered.  Some assignments 
+are graded using a letter grade, while others might be graded on a pass/fail basis.  
+This question concerns a few such possible classes.
+
+
+
+
+
+
+
+
+
+
+
+
+
+The code is provided for the GradebookEntry and LetterGradeEntry classes.  Note 
+that GradebookEntry is an abstract class, as it impossible to write the getGrade 
+method without knowing how the assignment will be graded.  The 
+LetterGradeEntry class converts a percent into a letter grade.
+
+public abstract class GradebookEntry
+{
+	private String description;
+	
+	public GradebookEntry(String initialDescription)
+	{
+		description = initialDescription;
+	}
+	
+	/** @return a description of this entry, like 
+	Homework #17" or "Asteroids" */
+	public String getDescription()
+	{
+		return description;
+	}
+	
+	/** @return a String representing a grade for this 
+	entry; depending on the type of the entry, this could be 
+	"B", "pass", or "very good" */
+	public abstract String getGrade();
+	
+}
+
+
+public class LetterGradeEntry extends GradebookEntry
+{
+	private double percent;
+		
+	/** LetterGradeEntry constructor.  
+	The percent is set to 0.0 */
+	public LetterGradeEntry (String initialDescription)
+	{
+		super(initialDescription);
+		percent = 0.0;
+	}
+	
+	/** @param newPercent the new percent score 
+	of this entry */
+	public void setPercent(double newPercent)
+	{
+		percent = newPercent;
+	}
+
+	/** @return the percent score for this entry 
+	of this entry */
+	public double getPercent()
+	{
+		return percent;
+	}
+
+	
+	/** @return a grade for this entry, which will
+	be a letter "A" through "F" */
+	public String getGrade()
+	{
+		if (percent >=90.0)
+		    return "A";
+		else if (percent >= 80.0)
+			return "B";
+		else if (percent >= 70.0)
+			return "C";
+		else if (percent >= 60.0)
+		   return "D";
+		else
+			return "F";
+	}
+}
+
+
+
+Part A
+Write the complete class declaration for the PassFailEntry class.  The 
+PassFailEntry constructor should take two parameters: a String representing the 
+description, and a double representing the minimum passing percent score on this 
+assignment to achieve a grade of "pass".  The grade for a PassFailEntry should 
+either be "pass" or "fail", determined by whether or not the percent score is 
+greater than or equal to the minimum passing percent score.  For example, if the 
+minimum passing percent score is 75, an entry with a percent of 83 would receive a 
+"pass" grade, whereas an entry with a percent of 73 would receive a "fail" grade.
+
+
+
+Part B
+As a math and computer science teacher, I have always wondered how humanities 
+teachers assign either a percent or a grade to a graded essay.  What's the difference 
+in an essay with a grade of 88% or 89%?  How does the teacher decide whether the 
+grade is a B or a B-?
+Professor Jones is lazy, and realizes that she can't really determine whether or not 
+an essay deserves a B-, a B, or a B+.  She feels comfortable determining that the 
+essay is in the "B range", but doesn't want to take the time to determine whether 
+the essay deserves a plus or minus.  So, she develops the following rule:  She counts 
+the number of times the word "dichotomy" appears in the essay.  If that count is 
+zero, the essay receives a "minus" grade.  If that count is two or more, the essay 
+receives a "plus" grade.  If that count is exactly one, the essay receives a grade with 
+neither a plus nor a minus.
+
+Percent score for 
+the essay
+Grade as determined by 
+the percent
+Number of times the word 
+"dichotomy" appears in the essay
+Grade given to 
+this essay
+78
+C
+0
+C-
+92
+A
+1
+A
+81
+B
+2
+B+
+66
+D
+17
+D+
+
+This part of the question concerns a class called EssayEntry, which is a subclass of 
+LetterGradeEntry.  The EssayEntry constructor should take two parameters: a 
+String representing the description of the assignment, and a String representing 
+the entire text of the essay.  (Yes, this second String might be very long.)  You 
+should override the getGrade method to correctly give grades with plus and 
+minuses, according to Professor Jones's rule as described above.
+Write the complete class EssayEntry.  You should provide all necessary methods 
+and use meaningful identifiers.
+
+
+Question #2
+The copy machine in the Sacred Heart faculty room is quite advanced.  In addition 
+to making copies, teachers can print to the copy machine like any computer printer, 
+use the copy machine to send a fax, or scan a document like a computer scanner.
+
+The copy machine can only do one thing at once, and all the pending tasks are 
+stored in a “print queue.”
+
+The following abstract class is used to represent the various tasks.
+
+public abstract class CopyMachineTask
+{
+	private String username;  // a string like “kmorris” or “pnawas”
+	private int numPages; // number of pages this task represents
+
+	public CopyMachineTask(String user, int pages)
+	{
+		username = user;
+		numPages = pages;
+	}
+
+	public String getUsername() { return username; }
+	public int getNumPages() { return numPages; }
+
+       /** @return a priority which is an integer between 0 and 10
+           0 represents a “regular” priority
+           higher numbers represent higher priority tasks, which can be 
+           advanced in the queue  */
+       public abstract int getPriority();  
+       
+       /** @return a String describing the job, which is displayed on
+           the display panel on the copy machine */
+	public abstract String getDescription();
+}
+
+
+
+Part A
+Write the complete declaration for a class FaxTask, which “is-a” CopyMachineTask.  
+*	When a FaxTask is created, it must be given four parameters: a username, 
+the number of pages, an integer representing the priority, and a String 
+representing the phone number of the intended recipient of the fax.
+*	The description of this task should be something like "kmorris is faxing 
+3 pages to 650-787-5376" or "pnawas is faxing 1 page to 650-322-
+1866". (No, you do not need to consider the issue of whether the word 
+"pages" should be singular or plural.)
+*	It is not possible to change the priority of this task after it is created.
+
+
+
+Part B
+Consider the partial declaration of the CopyMachine class below.
+
+public class CopyMachine
+{
+	private ArrayList<CopyMachineTask> taskQueue;
+
+	// constructor, other private instance variables,
+       // and other methods not shown
+	
+	public String getNextTaskDescription()
+	{
+		// to be implemented in part B
+	}
+}
+
+Write CopyMachine method getNextTaskDescription, as described below.  This 
+method should return the description of the next task to be handled by the copy 
+machine. The private instance variable taskQueue contains all the tasks currently 
+being attempted by the copy machine.  The first task added to the queue will be at 
+the front of the ArrayList - that is, taskQueue.get(0).  Subsequent tasks will be 
+added in order, so, in the example below, two ScanTasks were added after the initial 
+MakeCopiesTask.
+
+Index
+0
+1
+2
+3
+4
+5
+6
+Task
+MakeCopiesTask
+[priority = 0]
+ScanTask
+[priority 
+= 0]
+ScanTask
+[priority 
+= 2]
+FaxTask
+[priority=0]
+FaxTask
+[priority=5]
+ScanTask
+[priority=0]
+FaxTask
+[priority=5]
+
+Recall that each task has a priority, and that higher priorities should be handled 
+first.  Unlike most printer queues you may be used to, in which the first print 
+request is always the first one to come out of the printer, this copy machine looks at 
+the queue and handles the highest priority task first.  Thus, in the example above, 
+the FaxTask at index 4 would be handled first.  Note that there are two tasks with 
+priority = 5, but the earlier one in the queue is handled first.
+
+Write CopyMachine method getNextTaskDescription.  In the example above, it 
+would return a String representing the description of the FaxTask at index = 4.  
+The description of this FaxTask might be something like "kmorris is faxing 3 
+pages to 650-787-5376". (Essentially, you need to find the "biggest" thing in this 
+ArrayList, which is a problem we've done many times before.)
+
+
+
+
+

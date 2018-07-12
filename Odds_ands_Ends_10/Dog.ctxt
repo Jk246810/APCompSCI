@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=givenName
+comment0.target=Dog(java.lang.String)
+comment1.params=
+comment1.target=java.lang.String\ getName()
+comment2.params=
+comment2.target=int\ getTagNumber()
+comment3.params=
+comment3.target=java.lang.String\ getSound()
+comment4.params=
+comment4.target=boolean\ isHappyToSeeYou()
+numComments=5

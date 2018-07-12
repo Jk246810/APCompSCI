@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=r\ g\ b
+comment0.target=CColor(int,\ int,\ int)
+comment1.params=other
+comment1.target=int\ compareTo(CColor)
+numComments=2

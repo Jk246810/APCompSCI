@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ init()
+comment1.params=g
+comment1.target=void\ paint(java.awt.Graphics)
+comment10.params=list
+comment10.target=void\ selectionSort(java.util.List)
+comment11.params=list
+comment11.target=void\ insertionSort(java.util.List)
+comment2.params=
+comment2.target=void\ start()
+comment3.params=
+comment3.target=void\ drawAndWait()
+comment4.params=
+comment4.target=void\ run()
+comment5.params=
+comment5.target=void\ stop()
+comment6.params=ke
+comment6.target=void\ keyPressed(java.awt.event.KeyEvent)
+comment7.params=ke
+comment7.target=void\ keyReleased(java.awt.event.KeyEvent)
+comment8.params=ke
+comment8.target=void\ keyTyped(java.awt.event.KeyEvent)
+comment9.params=list
+comment9.target=void\ bubbleSort(java.util.List)
+numComments=12

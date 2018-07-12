@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.params=numerator\ denominator
+comment0.target=Fraction(int,\ int)
+comment1.params=
+comment1.target=void\ reduce()
+comment1.text=\ \ This\ method\ automatically\ reduces\ the\ fraction,\ using\n\ \ \ a\ "greatest\ common\ factor"\ method\ discovered\ by\ Euclid.\n\ \ \ (How\ cool\ and\ historic\!)\n
+comment2.params=other
+comment2.target=Fraction\ add(Fraction)
+comment3.params=other
+comment3.target=Fraction\ multiply(Fraction)
+comment4.params=
+comment4.target=Fraction\ reciprocal()
+comment5.params=other
+comment5.target=Fraction\ divide(Fraction)
+comment6.params=
+comment6.target=Fraction\ cubed()
+comment7.params=
+comment7.target=java.lang.String\ toString()
+numComments=8

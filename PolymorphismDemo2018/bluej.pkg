@@ -1,8 +1,8 @@
 #BlueJ package file
 package.editor.height=317
 package.editor.width=424
-package.editor.x=553
-package.editor.y=184
+package.editor.x=807
+package.editor.y=43
 package.numDependencies=0
 package.numTargets=6
 package.showExtends=true
@@ -55,6 +55,10 @@ target4.type=ClassTarget
 target4.width=100
 target4.x=210
 target4.y=210
+target5.editor.height=700
+target5.editor.width=900
+target5.editor.x=251
+target5.editor.y=83
 target5.height=50
 target5.name=Runner
 target5.naviview.expanded=false
